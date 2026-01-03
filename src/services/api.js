@@ -455,6 +455,25 @@ class ApiService {
       method: 'POST',
     });
   }
+
+  // AI endpoints
+  async aiChat(message) {
+    return this.request('/ai/chat', {
+      method: 'POST',
+      body: JSON.stringify({ message }),
+    });
+  }
+
+  async generateAIInsights(type = 'general') {
+    return this.request('/ai/insights', {
+      method: 'POST',
+      body: JSON.stringify({ type }),
+    });
+  }
+
+  async getQuickInsights() {
+    return this.request('/ai/quick-insights');
+  }
 }
 
 export const api = new ApiService();

@@ -14,6 +14,7 @@ from routes.leave import leave_bp
 from routes.admin import admin_bp
 from routes.documents import documents_bp
 from routes.payroll import payroll_bp
+from routes.ai import ai_bp
 
 
 def create_app():
@@ -58,6 +59,7 @@ def create_app():
     app.register_blueprint(admin_bp, url_prefix='/api/admin')
     app.register_blueprint(documents_bp, url_prefix='/api/documents')
     app.register_blueprint(payroll_bp, url_prefix='/api/payroll')
+    app.register_blueprint(ai_bp, url_prefix='/api/ai')
     
     # Health check endpoint
     @app.route('/api/health', methods=['GET'])

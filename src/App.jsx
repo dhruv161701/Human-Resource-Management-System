@@ -18,6 +18,7 @@ import EmployeePayroll from './pages/employee/EmployeePayroll';
 import ManagerDashboard from './pages/manager/ManagerDashboard';
 import ManagerTimesheets from './pages/manager/ManagerTimesheets';
 import ManagerLeaves from './pages/manager/ManagerLeaves';
+import ManagerAI from './pages/manager/ManagerAI';
 
 const AppRoutes = () => {
   const { user, role } = useAuth();
@@ -61,6 +62,7 @@ const AppRoutes = () => {
                 <Route path="dashboard" element={<ManagerDashboard />} />
                 <Route path="timesheets" element={<ManagerTimesheets />} />
                 <Route path="leaves" element={<ManagerLeaves />} />
+                <Route path="ai" element={<ManagerAI />} />
                 <Route path="*" element={<Navigate to="/manager/dashboard" replace />} />
               </Routes>
             </DashboardLayout>
